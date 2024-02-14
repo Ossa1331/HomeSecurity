@@ -161,7 +161,6 @@ public class InsertGlassBreakSensorController {
 
             AllDevicesController.observableDeviceList.add(sensor);
 
-
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Information");
             alert.setHeaderText("Successful operation");

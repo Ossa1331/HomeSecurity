@@ -27,6 +27,7 @@ import java.util.concurrent.Executors;
 
 
 public class InsertCO2SensorController {
+    private static final Executor executor= Executors.newSingleThreadExecutor();
     private static final Logger logger= LoggerFactory.getLogger(InsertCO2SensorController.class);
 
     @FXML
@@ -149,11 +150,13 @@ public class InsertCO2SensorController {
                     .build();
 
             FileUtil.serializeCO2Sensor(sensor);
+
             Change change=new Change(sensor.getDeviceName(),sensor.getDeviceType(),"Sensor: " + sensor.getDeviceName()+ " has been successfully saved", LocalDateTime.now());
             SaveCO2SensorThread saveCO2SensorThread=new SaveCO2SensorThread(sensor, change);
 
-            Executor executor= Executors.newSingleThreadExecutor();
             executor.execute(saveCO2SensorThread);
+
+            AllDevicesController.observableDeviceList.add(sensor);
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Information");

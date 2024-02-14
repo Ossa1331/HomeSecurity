@@ -46,6 +46,7 @@ public class CO2Sensor extends Device implements Serializable {
 
         executor.execute(thread);
 
+
         logger.info(this.getDeviceName() + " has been measured");
 
         return currentCO2;

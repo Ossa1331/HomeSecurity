@@ -25,7 +25,7 @@ public class UpdateMeasureCO2Sensor extends DatabaseThreads implements Runnable{
                 super.updateCO2Sensor(sensor, event);
             });
         }catch(Exception e) {
-            e.printStackTrace();
+            logger.error("there has been an error in thread runtime. ", e);
         }
     }
 }

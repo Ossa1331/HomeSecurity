@@ -149,9 +149,6 @@ public class InsertCameraController {
                     Executor executor = Executors.newSingleThreadExecutor();
                     executor.execute(saveCameraThread);
 
-
-                    //DatabaseUtil.saveChange(change);
-
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Information");
                     alert.setHeaderText("Successful operation");

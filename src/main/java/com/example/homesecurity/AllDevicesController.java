@@ -505,8 +505,8 @@ public class AllDevicesController {
                 Device selectedDevice = getClickedDevice();
 
                 Change change= new Change(selectedDevice.getDeviceName(), selectedDevice.getDeviceType(), "Device's ("+selectedDevice.getDeviceName()+ ") status has been changed.", LocalDateTime.now());
-                UpdateDeviceStatus thread=new UpdateDeviceStatus(selectedDevice,change);
-                executor.execute(thread);
+                DatabaseUtil.updateDevice(selectedDevice);
+                DatabaseUtil.saveChange(change);
 
                 observableDeviceList.remove(selectedDevice);
                 selectedDevice.setDeviceStatus(!selectedDevice.getDeviceStatus());

@@ -1,6 +1,7 @@
 package classes;
 
 import enums.Locations;
+import javafx.scene.chart.PieChart;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import threads.UpdateMeasureCO2Sensor;

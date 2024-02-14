@@ -51,6 +51,7 @@ public class GlassBreakSensor extends Device implements Measurable<Boolean>, Ser
         UpdateMeasureGlassBreakSensor thread= new UpdateMeasureGlassBreakSensor(this,event);
         executor.execute(thread);
 
+
         logger.info(this.getDeviceName() + " has been measured");
 
         return this.glassBreak;

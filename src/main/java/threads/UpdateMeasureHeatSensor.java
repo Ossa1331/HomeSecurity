@@ -27,7 +27,7 @@ public class UpdateMeasureHeatSensor extends DatabaseThreads implements Runnable
             });
 
         }catch(Exception e) {
-            e.printStackTrace();
+            logger.error("there has been an error in thread runtime. ", e);
         }
     }
 }

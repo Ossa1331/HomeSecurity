@@ -207,6 +207,7 @@ public class MeasurableController {
                 }
             }
             deviceTableView.setItems(FXCollections.observableList(allDevices));
+
         }));
 
         timeline.setCycleCount(Timeline.INDEFINITE);

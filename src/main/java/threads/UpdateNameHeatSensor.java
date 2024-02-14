@@ -4,8 +4,11 @@ import classes.CO2Sensor;
 import classes.Change;
 import classes.HeatSensor;
 import javafx.application.Platform;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UpdateNameHeatSensor extends DatabaseThreads implements Runnable{
+    private static final Logger logger= LoggerFactory.getLogger(CO2Sensor.class);
 
     private final String result;
     private final HeatSensor sensor;
@@ -22,7 +25,7 @@ public class UpdateNameHeatSensor extends DatabaseThreads implements Runnable{
                 super.updateNameHeatSensor(sensor, change, result);
             });
         }catch(Exception e) {
-            e.printStackTrace();
+            logger.error("there has been an error in thread runtime. ", e);
         }
     }
 }

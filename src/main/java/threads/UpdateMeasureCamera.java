@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class UpdateMeasureCamera extends DatabaseThreads implements Runnable {
-    private static final Logger logger= LoggerFactory.getLogger(CO2Sensor.class);
+    private static final Logger logger= LoggerFactory.getLogger(UpdateMeasureCamera.class);
 
     private final Camera camera;
     private final Event event;
@@ -27,7 +27,7 @@ public class UpdateMeasureCamera extends DatabaseThreads implements Runnable {
             });
 
         }catch(Exception e) {
-            e.printStackTrace();
+            logger.error("there has been an error in thread runtime. ", e);
         }
     }
 }
